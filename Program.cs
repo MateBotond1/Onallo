@@ -6,11 +6,17 @@ Console.WriteLine("Add meg a másik termék nevét, árát, darabszámát");
 string Termék2 = Console.ReadLine();
 int Ár2 = int.Parse(Console.ReadLine());
 int Vásároltmennyiseg2 = int.Parse(Console.ReadLine());
-int alapossz = (Ár1 * Vásároltmennyiseg1) + (Ár2 * Vásároltmennyiseg2);
+double alapossz = (Ár1 * Vásároltmennyiseg1) + (Ár2 * Vásároltmennyiseg2);
 bool kedvezmeny = false;
-int kedvezettar = 0;
+double kedvezettar = 0;
 if (alapossz>=10000)
 {
-    kedvezettar=alapossz*0,9;
+    kedvezettar = alapossz * 0.9;
+    kedvezmeny=true;
+    Console.WriteLine($"Kedvezményes,{kedvezettar}");
+}
+else
+{
+    Console.WriteLine($"Nem kedvezményes,{alapossz}");
 }
 
